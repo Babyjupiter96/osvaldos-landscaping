@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osvaldo's Landscaping & Tree Trimming | Phoenix, AZ</title>
+  <meta name="description" content="Osvaldo's Landscaping and Tree Trimming Services — serving Phoenix, AZ since 1990. Free estimates. Call 602.509.7759." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --maroon:      #6E2020;
+      --maroon-deep: #4A1414;
+      --terra:       #C4622D;
+      --sand:        #F2E0C8;
+      --cream:       #FBF6EF;
+      --brown:       #3D2B1F;
+      --green:       #4A6741;
+      --green-light: #6B8F61;
+      --gold:        #C9963A;
+      --text:        #1E1410;
+      --text-mid:    #5C4A3A;
+      --white:       #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--maroon-deep);
+      color: var(--sand);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .topbar strong { color: var(--gold); letter-spacing: 0.12em; }
+    .topbar a {
+      display: inline-block;
+      background: var(--terra);
+      color: var(--white);
+      text-decoration: none;
+      padding: 6px 20px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      transition: background 0.2s;
+    }
+    .topbar a:hover { background: var(--gold); color: var(--brown); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(251, 246, 239, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid var(--sand);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 48px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--maroon);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--terra); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--maroon); }
+    .nav-cta {
+      background: var(--maroon);
+      color: var(--white) !important;
+      padding: 9px 22px;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--terra) !important; color: var(--white) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        linear-gradient(160deg, rgba(74,20,20,0.72) 0%, rgba(61,43,31,0.55) 50%, rgba(74,103,65,0.45) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+      padding: 40px 24px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--terra);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 2px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.4);
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero-sub {
+      color: rgba(255,255,255,0.88);
+      font-size: 1.1rem;
+      font-weight: 300;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--terra);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold); color: var(--brown); transform: translateY(-2px); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.7);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 36px;
+      border-radius: 3px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, border-color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+    .hero-since {
+      margin-top: 48px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--maroon);
+      color: var(--sand);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      text-align: center;
+    }
+    .trust-item {
+      padding: 28px 16px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .trust-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 96px 48px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .section-lead {
+      color: var(--text-mid);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(61,43,31,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(61,43,31,0.14); }
+    .service-img {
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .service-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(61,43,31,0.5) 100%);
+    }
+    .s1 { background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=75'); }
+    .s2 { background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75'); }
+    .s3 { background-image: url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=75'); }
+    .s4 { background-image: url('https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=75'); }
+    .s5 { background-image: url('https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=75'); }
+    .s6 { background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=75'); }
+    .service-body { padding: 24px 26px 28px; }
+    .service-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+    .service-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--brown);
+      margin-bottom: 8px;
+    }
+    .service-body p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--brown); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--terra);
+      color: var(--white);
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    .about-badge strong { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+    .about-badge span { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px; }
+    .about-text .section-tag { color: var(--gold); }
+    .about-text .section-title { color: var(--sand); }
+    .about-text .section-lead { color: rgba(242,224,200,0.8); max-width: 100%; }
+    .about-points { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      color: rgba(242,224,200,0.85);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .about-point-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--terra);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── WHY US ── */
+    #why { background: var(--sand); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .why-card {
+      text-align: center;
+      padding: 40px 28px;
+      background: var(--white);
+      border-radius: 6px;
+      border-bottom: 3px solid var(--terra);
+    }
+    .why-icon { font-size: 2.4rem; margin-bottom: 16px; display: block; }
+    .why-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--brown);
+      margin-bottom: 10px;
+    }
+    .why-card p { font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── TESTIMONIALS ── */
+    #reviews { background: var(--cream); }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      margin-top: 56px;
+    }
+    .review-card {
+      background: var(--white);
+      border-radius: 6px;
+      padding: 32px 30px;
+      box-shadow: 0 2px 16px rgba(61,43,31,0.07);
+      border-left: 4px solid var(--terra);
+    }
+    .stars { color: var(--gold); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .review-text { font-size: 0.92rem; color: var(--text-mid); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
+    .review-author { font-weight: 600; font-size: 0.85rem; color: var(--brown); }
+    .review-location { font-size: 0.78rem; color: var(--terra); margin-top: 2px; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background:
+        linear-gradient(135deg, rgba(74,20,20,0.88) 0%, rgba(61,43,31,0.80) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80') center/cover;
+      padding: 80px 48px;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .cta-banner p { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-bottom: 36px; }
+    .cta-phone {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    .cta-phone:hover { color: var(--white); }
+    .cta-note { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 16px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .contact-info .section-lead { margin-bottom: 36px; }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--sand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-detail h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--terra); margin-bottom: 4px; }
+    .contact-detail p, .contact-detail a { font-size: 1rem; color: var(--brown); font-weight: 500; text-decoration: none; }
+    .contact-detail a:hover { color: var(--terra); }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid var(--sand);
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus { border-color: var(--terra); }
+    .contact-form textarea { resize: vertical; min-height: 120px; }
+    .contact-form button {
+      background: var(--maroon);
+      color: var(--white);
+      border: none;
+      padding: 16px;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover { background: var(--terra); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--maroon-deep);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 36px 24px;
+      font-size: 0.82rem;
+      line-height: 1.9;
+    }
+    footer strong { color: var(--gold); }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      section { padding: 72px 24px; }
+      .trust-strip { grid-template-columns: repeat(2, 1fr); }
+      .about-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-wrap { max-width: 360px; margin: 0 auto; }
+      .form-row { grid-template-columns: 1fr; }
+      .about-badge { right: 0; bottom: -16px; width: 90px; height: 90px; }
+      .about-badge strong { font-size: 1.5rem; }
+      .cta-banner { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <span><strong>602.509.7759</strong> &nbsp;·&nbsp; FREE ESTIMATES</span>
+    <a href="tel:6025097759">Call NOW</a>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#"><span>Osvaldo's</span> Landscaping</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Phoenix, Arizona · Since 1990</span>
+      <h1>Landscaping &amp; Tree Trimming <em>Done Right</em></h1>
+      <p class="hero-sub">
+        Over 35 years of trusted service across the Valley. From lush desert gardens to
+        expert tree care — we bring craftsmanship to every yard.
+      </p>
+      <div class="hero-btns">
+        <a href="tel:6025097759" class="btn-primary">Get a Free Estimate</a>
+        <a href="#services" class="btn-outline">Our Services</a>
+      </div>
+      <p class="hero-since">Serving the Phoenix Valley for over 35 years</p>
+    </div>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="trust-item">
+      <span class="trust-num">35+</span>
+      <span class="trust-label">Years in Business</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">1000+</span>
+      <span class="trust-label">Happy Clients</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">5★</span>
+      <span class="trust-label">Yelp Rated</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-num">Free</span>
+      <span class="trust-label">Estimates</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-inner">
+      <span class="section-tag">What We Do</span>
+      <h2 class="section-title">Full-Service Landscaping<br>for the Sonoran Desert</h2>
+      <p class="section-lead">
+        From routine maintenance to complete yard transformations, Osvaldo's team handles it all
+        with the care and expertise that only comes from decades of experience.
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img s1"></div>
+          <div class="service-body">
+            <span class="service-icon">🌵</span>
+            <h3>Desert Landscaping</h3>
+            <p>Beautiful, water-wise designs using native plants, cacti, and decorative rock that thrive in the Arizona heat.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img s2"></div>
+          <div class="service-body">
+            <span class="service-icon">🌳</span>
+            <h3>Tree Trimming &amp; Removal</h3>
+            <p>Professional pruning, shaping, and removal of trees of all sizes. We keep your trees healthy and your property safe.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img s3"></div>
+          <div class="service-body">
+            <span class="service-icon">✂️</span>
+            <h3>Lawn Care &amp; Maintenance</h3>
+            <p>Regular mowing, edging, and upkeep to keep your lawn looking pristine year-round.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img s4"></div>
+          <div class="service-body">
+            <span class="service-icon">💧</span>
+            <h3>Irrigation Systems</h3>
+            <p>Installation and repair of drip and sprinkler systems to keep your landscape hydrated efficiently.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img s5"></div>
+          <div class="service-body">
+            <span class="service-icon">🪨</span>
+            <h3>Rock &amp; Gravel Work</h3>
+            <p>Decomposed granite, river rock, flagstone — we install and grade decorative hardscaping that lasts.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img s6"></div>
+          <div class="service-body">
+            <span class="service-icon">🏡</span>
+            <h3>Yard Cleanup &amp; Hauling</h3>
+            <p>Full debris removal, overgrowth clearing, and haul-away. We leave your property spotless.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img
+            class="about-img"
+            src="osvaldo.jpg"
+            alt="Osvaldo — owner of Osvaldo's Landscaping"
+            onerror="this.style.background='linear-gradient(160deg,#6E2020,#3D2B1F)';this.style.minHeight='420px';this.removeAttribute('src')"
+          />
+          <div class="about-badge">
+            <strong>35+</strong>
+            <span>Years of<br>Experience</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <span class="section-tag">Meet Osvaldo</span>
+          <h2 class="section-title">Built on Hard Work &amp; Honest Service</h2>
+          <p class="section-lead">
+            Since 1990, Osvaldo has been transforming yards across the Phoenix Valley with
+            a simple promise: show up, do the job right, and treat every property like it's his own.
+          </p>
+          <div class="about-points">
+            <div class="about-point">
+              <div class="about-point-icon">✓</div>
+              <span>Owner-operated — Osvaldo is on every job, personally overseeing the work.</span>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">✓</div>
+              <span>Deep roots in Phoenix — 35+ years of local expertise means we know desert landscapes inside and out.</span>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">✓</div>
+              <span>Fair, transparent pricing with free estimates and no hidden fees.</span>
+            </div>
+            <div class="about-point">
+              <div class="about-point-icon">✓</div>
+              <span>Bilingual service — English &amp; Spanish spoken.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why">
+    <div class="section-inner">
+      <span class="section-tag">Why Choose Us</span>
+      <h2 class="section-title">The Osvaldo Difference</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon">🤝</span>
+          <h3>Locally Trusted</h3>
+          <p>Three decades of word-of-mouth referrals across Phoenix, Scottsdale, and the East Valley.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">⚡</span>
+          <h3>Fast &amp; Reliable</h3>
+          <p>We show up when we say we will and finish the job on time — every time.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">💰</span>
+          <h3>Honest Pricing</h3>
+          <p>Free estimates with no surprise charges. You know exactly what you're getting before we start.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon">🌿</span>
+          <h3>Desert Specialists</h3>
+          <p>We know Arizona plants, soil, and climate — your landscape gets care tailored to the Sonoran desert.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-inner">
+      <span class="section-tag">What Clients Say</span>
+      <h2 class="section-title">Trusted by Phoenix Homeowners</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Osvaldo transformed our entire front yard. He showed up on time, worked all day, and the result was stunning. We've been using him for 10 years and would never call anyone else."</p>
+          <div class="review-author">Maria G.</div>
+          <div class="review-location">Phoenix, AZ · via Yelp</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"Best tree trimming service in the Valley. He came out the same week and the price was very fair. My Palo Verde looks better than it ever has. Highly recommend!"</p>
+          <div class="review-author">Robert T.</div>
+          <div class="review-location">Scottsdale, AZ · via Yelp</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p class="review-text">"I've hired a lot of landscapers over the years — Osvaldo is the only one I keep calling back. Honest, hardworking, and takes real pride in his work."</p>
+          <div class="review-author">Jennifer M.</div>
+          <div class="review-location">Tempe, AZ · via Yelp</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="cta-banner">
+    <h2>Ready for a Beautiful Yard?</h2>
+    <p>Call today for a free, no-obligation estimate.</p>
+    <br />
+    <a class="cta-phone" href="tel:6025097759">602.509.7759</a>
+    <br />
+    <a href="#contact" class="btn-primary">Send Us a Message</a>
+    <p class="cta-note">Free estimates · Serving Phoenix &amp; the Greater Valley</p>
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Request a Free Estimate</h2>
+          <p class="section-lead">Give us a call or fill out the form and we'll get back to you promptly to schedule your free on-site estimate.</p>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <a href="tel:6025097759">602.509.7759</a>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div>
+              <h4>Service Area</h4>
+              <p>Phoenix, Scottsdale, Tempe, Mesa &amp; Surrounding Cities</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">🕐</div>
+            <div>
+              <h4>Hours</h4>
+              <p>Monday – Saturday: 7am – 6pm</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+          </div>
+          <input type="tel" placeholder="Phone Number" required />
+          <input type="email" placeholder="Email Address" />
+          <select>
+            <option value="" disabled selected>Select a Service</option>
+            <option>Desert Landscaping</option>
+            <option>Tree Trimming / Removal</option>
+            <option>Lawn Care &amp; Maintenance</option>
+            <option>Irrigation Systems</option>
+            <option>Rock &amp; Gravel Work</option>
+            <option>Yard Cleanup &amp; Hauling</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Tell us about your project…"></textarea>
+          <button type="submit">Send My Request →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p><strong>Osvaldo's Landscaping &amp; Tree Trimming Services</strong></p>
+    <p>Phoenix, AZ &nbsp;·&nbsp; <a href="tel:6025097759">602.509.7759</a> &nbsp;·&nbsp; Serving the Valley Since 1990</p>
+    <p style="margin-top:12px;">© 2025 Osvaldo's Landscaping. All rights reserved.</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div id="chat-widget">
+    <button id="chat-toggle" aria-label="Open chat">
+      <span id="chat-icon">💬</span>
+      <span id="chat-close-icon" style="display:none">✕</span>
+      <span id="chat-badge">1</span>
+    </button>
+    <div id="chat-window" aria-live="polite">
+      <div id="chat-header">
+        <div id="chat-avatar">🌵</div>
+        <div>
+          <div id="chat-name">Osvaldo's Team</div>
+          <div id="chat-status">● Online — typically replies instantly</div>
+        </div>
+      </div>
+      <div id="chat-messages">
+        <div class="chat-msg bot">
+          <div class="msg-bubble">Hey there! 👋 Welcome to Osvaldo's Landscaping. How can I help you today?</div>
+        </div>
+        <div class="chat-quick-replies">
+          <button onclick="quickReply('Get a free estimate')">Get a free estimate</button>
+          <button onclick="quickReply('What services do you offer?')">Services offered</button>
+          <button onclick="quickReply('What areas do you serve?')">Service area</button>
+          <button onclick="quickReply('How much does it cost?')">Pricing</button>
+        </div>
+      </div>
+      <div id="chat-input-row">
+        <input id="chat-input" type="text" placeholder="Type a message…" onkeydown="if(event.key==='Enter')sendChat()" />
+        <button id="chat-send" onclick="sendChat()">➤</button>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #chat-widget {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+    }
+    #chat-toggle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--maroon);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      position: relative;
+    }
+    #chat-toggle:hover { background: var(--terra); transform: scale(1.08); }
+    #chat-badge {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: var(--terra);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid white;
+    }
+    #chat-window {
+      display: none;
+      position: absolute;
+      bottom: 74px;
+      right: 0;
+      width: 340px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+      overflow: hidden;
+      flex-direction: column;
+      animation: chatIn 0.25s ease;
+    }
+    #chat-window.open { display: flex; }
+    @keyframes chatIn {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    #chat-header {
+      background: var(--maroon);
+      color: white;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #chat-avatar {
+      width: 42px;
+      height: 42px;
+      background: var(--terra);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    #chat-name { font-weight: 600; font-size: 0.95rem; }
+    #chat-status { font-size: 0.72rem; color: rgba(255,255,255,0.7); margin-top: 2px; }
+    #chat-messages {
+      flex: 1;
+      max-height: 320px;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #f9f5f0;
+    }
+    .chat-msg { display: flex; }
+    .chat-msg.bot { justify-content: flex-start; }
+    .chat-msg.user { justify-content: flex-end; }
+    .msg-bubble {
+      max-width: 82%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .chat-msg.bot .msg-bubble {
+      background: white;
+      color: var(--text);
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .chat-msg.user .msg-bubble {
+      background: var(--maroon);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .chat-quick-replies button {
+      background: white;
+      border: 1.5px solid var(--terra);
+      color: var(--terra);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .chat-quick-replies button:hover { background: var(--terra); color: white; }
+    .chat-typing {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 10px 14px;
+      background: white;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .chat-typing span {
+      width: 7px;
+      height: 7px;
+      background: #bbb;
+      border-radius: 50%;
+      animation: bounce 1s infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+    #chat-input-row {
+      display: flex;
+      border-top: 1px solid #eee;
+      background: white;
+    }
+    #chat-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      padding: 14px 16px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      background: white;
+    }
+    #chat-send {
+      background: var(--maroon);
+      color: white;
+      border: none;
+      padding: 0 18px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    #chat-send:hover { background: var(--terra); }
+    @media (max-width: 400px) {
+      #chat-window { width: calc(100vw - 32px); right: -4px; }
+    }
+  </style>
+
+  <script>
+    // ── CHATBOT ──
+    const BOT_RESPONSES = [
+      {
+        match: /estimate|quote|price|cost|how much|free/i,
+        reply: "We offer **free estimates** with no obligation! The best way is to give Osvaldo a call at 📞 **602.509.7759** and he'll schedule a time to come take a look at your property.",
+        quick: ['Call now', 'What services do you offer?']
+      },
+      {
+        match: /service|offer|do you do|what do you/i,
+        reply: "We offer:\n🌵 Desert Landscaping\n🌳 Tree Trimming & Removal\n✂️ Lawn Care & Maintenance\n💧 Irrigation Systems\n🪨 Rock & Gravel Work\n🏡 Yard Cleanup & Hauling\n\nNeed something not on the list? Just ask!",
+        quick: ['Get a free estimate', 'What areas do you serve?']
+      },
+      {
+        match: /area|serve|location|city|phoenix|scottsdale|tempe|mesa|gilbert|chandler/i,
+        reply: "We serve **Phoenix and the entire Valley** including Scottsdale, Tempe, Mesa, Gilbert, Chandler, and surrounding cities. Not sure if we cover your area? Call us at 602.509.7759 and we'll let you know!",
+        quick: ['Get a free estimate', 'What are your hours?']
+      },
+      {
+        match: /hour|open|available|schedule|when/i,
+        reply: "We're available **Monday through Saturday, 7am – 6pm**. Give us a call at 📞 **602.509.7759** to schedule your free estimate!",
+        quick: ['Get a free estimate', 'What services do you offer?']
+      },
+      {
+        match: /tree|trim|removal|stump|prune/i,
+        reply: "Tree trimming and removal is one of our specialties! We handle trees of all sizes — shaping, pruning, full removal, and cleanup. Call **602.509.7759** for a free on-site estimate.",
+        quick: ['Get a free estimate', 'What other services do you offer?']
+      },
+      {
+        match: /rock|gravel|granite|decomposed|flagstone/i,
+        reply: "Absolutely! We install decomposed granite, river rock, flagstone, and all types of decorative hardscaping. It's a great low-maintenance option for Arizona yards. Want a free estimate?",
+        quick: ['Get a free estimate', 'What areas do you serve?']
+      },
+      {
+        match: /irrigation|sprinkler|drip|water/i,
+        reply: "Yes, we install and repair drip and sprinkler irrigation systems! Proper irrigation is key in Arizona's heat. We'll make sure your system runs efficiently. Call **602.509.7759** to get started.",
+        quick: ['Get a free estimate', 'What services do you offer?']
+      },
+      {
+        match: /how long|experience|years|since|1990/i,
+        reply: "Osvaldo has been in the business since **1990** — that's over 35 years of experience right here in the Phoenix Valley. He personally oversees every job!",
+        quick: ['Get a free estimate', 'What services do you offer?']
+      },
+      {
+        match: /spanish|habla|español|bilingual/i,
+        reply: "¡Sí! Hablamos español. Osvaldo is bilingual and happy to communicate in English or Spanish — whatever's most comfortable for you.",
+        quick: ['Get a free estimate', 'What services do you offer?']
+      },
+      {
+        match: /call|phone|number|contact|reach/i,
+        reply: "You can reach Osvaldo directly at 📞 **602.509.7759**. He's available Monday–Saturday, 7am–6pm. Or scroll down to fill out our contact form and we'll call you back!",
+        quick: ['What services do you offer?', 'What areas do you serve?']
+      },
+    ];
+
+    const DEFAULT_REPLY = {
+      reply: "Great question! For the fastest answer, give Osvaldo a call at 📞 **602.509.7759** — he's happy to chat. Or I can help with some common questions:",
+      quick: ['Get a free estimate', 'What services do you offer?', 'What areas do you serve?']
+    };
+
+    function getBotReply(text) {
+      for (const r of BOT_RESPONSES) {
+        if (r.match.test(text)) return r;
+      }
+      return DEFAULT_REPLY;
+    }
+
+    function formatText(text) {
+      return text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+    }
+
+    const msgContainer = () => document.getElementById('chat-messages');
+
+    function appendMsg(text, role) {
+      const div = document.createElement('div');
+      div.className = 'chat-msg ' + role;
+      const bubble = document.createElement('div');
+      bubble.className = 'msg-bubble';
+      bubble.innerHTML = formatText(text);
+      div.appendChild(bubble);
+      msgContainer().appendChild(div);
+      msgContainer().scrollTop = 9999;
+      return div;
+    }
+
+    function appendQuick(options) {
+      const qr = document.createElement('div');
+      qr.className = 'chat-quick-replies';
+      options.forEach(o => {
+        const btn = document.createElement('button');
+        btn.textContent = o;
+        btn.onclick = () => quickReply(o);
+        qr.appendChild(btn);
+      });
+      msgContainer().appendChild(qr);
+      msgContainer().scrollTop = 9999;
+    }
+
+    function quickReply(text) {
+      document.querySelectorAll('.chat-quick-replies').forEach(el => el.remove());
+      appendMsg(text, 'user');
+      showTyping(text);
+    }
+
+    function showTyping(userText) {
+      const typing = document.createElement('div');
+      typing.className = 'chat-msg bot';
+      typing.innerHTML = '<div class="chat-typing"><span></span><span></span><span></span></div>';
+      msgContainer().appendChild(typing);
+      msgContainer().scrollTop = 9999;
+      setTimeout(() => {
+        typing.remove();
+        const response = getBotReply(userText);
+        appendMsg(response.reply, 'bot');
+        if (response.quick) appendQuick(response.quick.filter(q => q !== 'Call now'));
+        if (response.quick?.includes('Call now')) {
+          const callRow = document.createElement('div');
+          callRow.className = 'chat-quick-replies';
+          const callBtn = document.createElement('a');
+          callBtn.href = 'tel:6025097759';
+          callBtn.textContent = '📞 Call 602.509.7759';
+          callBtn.style.cssText = 'background:var(--maroon);color:white;border-radius:20px;padding:6px 14px;font-size:0.78rem;text-decoration:none;display:inline-block;font-family:Inter,sans-serif;';
+          callRow.appendChild(callBtn);
+          msgContainer().appendChild(callRow);
+          msgContainer().scrollTop = 9999;
+        }
+      }, 900 + Math.random() * 400);
+    }
+
+    function sendChat() {
+      const input = document.getElementById('chat-input');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      document.querySelectorAll('.chat-quick-replies').forEach(el => el.remove());
+      appendMsg(text, 'user');
+      showTyping(text);
+    }
+
+    // Toggle
+    document.getElementById('chat-toggle').addEventListener('click', () => {
+      const win = document.getElementById('chat-window');
+      const isOpen = win.classList.toggle('open');
+      document.getElementById('chat-icon').style.display = isOpen ? 'none' : '';
+      document.getElementById('chat-close-icon').style.display = isOpen ? '' : 'none';
+      document.getElementById('chat-badge').style.display = 'none';
+      if (isOpen) document.getElementById('chat-input').focus();
+    });
+  </script>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = '✓ Message Sent! We\'ll be in touch soon.';
+      btn.style.background = '#4A6741';
+      btn.disabled = true;
+    }
+
+    // Smooth active nav highlight
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--maroon)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
